@@ -21,7 +21,8 @@
         <script src="_static/translations.js?v=bf059b8c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Recherche" href="search.html" /> 
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="Welcome to LDR_SIMULATION’s documentation!" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,24 +44,24 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Introduction</a></li>
-<li><a class="reference internal" href="#simulation">Simulation</a><ul>
-<li><a class="reference internal" href="#la-restitution-des-avantages-inconvenients">La restitution des avantages/inconvénients</a><ul>
-<li><a class="reference internal" href="#le-simulateur-coppeliasim">Le simulateur CoppeliaSim</a></li>
-<li><a class="reference internal" href="#le-simulateur-gazebosim">Le simulateur GazeboSim</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#les-besoins-pour-la-simulation">Les besoins pour la simulation</a><ul>
-<li><a class="reference internal" href="#tableau-recapitulatif">Tableau récapitulatif</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#application-reelle">Application réelle</a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#simulation">Simulation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#la-restitution-des-avantages-inconvenients">La restitution des avantages/inconvénients</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#le-simulateur-coppeliasim">Le simulateur CoppeliaSim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#le-simulateur-gazebosim">Le simulateur GazeboSim</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tableau-recapitulatif-de-la-comparaison">Tableau récapitulatif de la comparaison</a></li>
 </ul>
 </li>
 </ul>
-</div>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#les-besoins-pour-la-simulation">Les besoins pour la simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#drone-painting">Drone Painting</a></li>
+</ul>
+</li>
+</ul>
+
         </div>
       </div>
     </nav>
@@ -101,6 +102,10 @@ Différents travaux sont réalisés depuis plusieurs années avec l’ONERA sur 
 <h1>Simulation<a class="headerlink" href="#simulation" title="Lien vers cette rubrique"></a></h1>
 <p>La simulation c’est la création d’un modèle virtuel d’une machine, tout en prenant en considération l’environnement de travail et tous les autres facteurs influents. Ça nous permet de savoir si la conception peut fonctionner après la fabrication. Ça nous permet de tester différentes machines/algorithmes dans un même environnement (plusieurs drones dans un parc urbain et voir comment chaque drone navigue entre les arbres et réagit aux obstacles), et de tester une machine dans différents environnements (simuler un seul modèle de drone au-dessus d’une forêt avec des vents variables, dans un désert avec des températures élevées ou à l’intérieur de la maison).</p>
 <p>Comparaison entre CoppeliaSim et GazeboSim qui sont tous deux des simulateurs de robotique mais avec des caractéristiques distinctes, L’objectif de cette comparaison est de déterminer le simulateur le plus adapté à nos besoins.</p>
+<p>L’image suivante est l’interface graphique de CoppeliaSim</p>
+<p><img alt="Interface graphique de Coppeliasim" src="_images/interface_coppeliasim.png" /></p>
+<p>L’image suivante est l’interface graphique de GazeboSim</p>
+<p><img alt="Interface graphique de GazeboSim" src="_images/interface_gazebo.png" /></p>
 <section id="la-restitution-des-avantages-inconvenients">
 <h2>La restitution des avantages/inconvénients<a class="headerlink" href="#la-restitution-des-avantages-inconvenients" title="Lien vers cette rubrique"></a></h2>
 <section id="le-simulateur-coppeliasim">
@@ -153,6 +158,10 @@ Différents travaux sont réalisés depuis plusieurs années avec l’ONERA sur 
 </tr>
 </tbody>
 </table>
+<section id="tableau-recapitulatif-de-la-comparaison">
+<h4>Tableau récapitulatif de la comparaison<a class="headerlink" href="#tableau-recapitulatif-de-la-comparaison" title="Lien vers cette rubrique"></a></h4>
+<p><img alt="Comparaison en tableau" src="_images/comparaison.png" /></p>
+</section>
 </section>
 </section>
 <section id="les-besoins-pour-la-simulation">
@@ -161,34 +170,35 @@ Différents travaux sont réalisés depuis plusieurs années avec l’ONERA sur 
 <ul class="simple">
 <li><p>Un simulateur qui a l’interface graphique de coppeliasim mais qu’on pourra utiliser comme Gazebo, c’est-à-dire on pourra créer notre scène sur un fichier et avoir un seul dossier qui contient notre projet, on pourra lancer le projet dans un terminal sans ouvrir le simulateur avant.</p></li>
 <li><p>Un simulateur facile à installer sur windows de preférence (car sur linux certaines exécutions bug)</p></li>
-<li><p>Un simulateur avec un facteur temps réel qui soit proche du temps réel
-Image du tableau
-Après avoir tester les deux simulateurs j’ai choisi comme outil de simulation CoppeliaSim pour sa facilité et son efficacité.</p></li>
+<li><p>Un simulateur avec un facteur temps réel qui soit proche du temps réel</p></li>
 </ul>
-<section id="tableau-recapitulatif">
-<h3>Tableau récapitulatif<a class="headerlink" href="#tableau-recapitulatif" title="Lien vers cette rubrique"></a></h3>
+<p><img alt="besoins pour la simulation" src="_images/besoin_simulation.png" /></p>
+<p>Après avoir tester les deux simulateurs j’ai choisi comme outil de simulation CoppeliaSim pour sa facilité et son efficacité.</p>
+</section>
+<section id="drone-painting">
+<h2>Drone Painting<a class="headerlink" href="#drone-painting" title="Lien vers cette rubrique"></a></h2>
+<p><img alt="Drone Painting" src="_images/gif1.gif" /></p>
+<p>Il faut savoir que dans CoppeliaSim, on peut prendre des objets directement sur l’interface graphique; pour mon cas, j’ai pris un drone ensuite je lui ai rajouté un proximité sensor, qui le cone large rose, j’ai également rajouté un painting nozzle qui est le cone un peu plus fin rose, donc une fois la scène est crée on va créer une connexion entre CoppeliaSim et Python grace à remoteApi qu’on rajoute dans les header, on peut donc dire que :
+à partir d’un code python simple on peut: modifier des scènes, faire déplacer des objets et récuperer des valeurs des capteurs.</p>
+<p><img alt="Simulation" src="_images/sim.png" /></p>
+<p>Donc comme application réelle j’ai choisi de faire du Drone Painting, c’est une scène qui contient deux drones et faire en sorte qu’ils volent vers un mur et dessinent des points selon mes indications (ils peuvent former un rectangle par exemple)</p>
+<p>Lancer la simulation en mode stepped pour avoir une simulation déterministe et reproductible (la simulation en mode stepped est plus lente mais c’est reproductible)</p>
 <p><strong>TIPS COPPELIASIM</strong></p>
 <ul class="simple">
 <li><p>Toujours enregistrer la scène avant de lancer la simulation sinon tous les objets que vous avez rajoutés ou toutes modifications apportées seront disparus</p></li>
 <li><p>Toujours arrêter la simulation en cours avant de lancer une nouvelle simulation</p></li>
 <li><p>Si vous avez ouvert plusieurs scènes à la fois, arrêtez la simulation de toutes les scènes avant de lancer une nouvelle simulation</p></li>
-<li><p>Si vous voulez déplacer un objet avec la main ou en tapant les coordonnées que vous souhaitez, cliquez sur ça</p></li>
+<li><p>Si vous voulez déplacer un objet avec la souris cliquez sur ça <img alt="position" src="_images/position.png" /> , il y aura même une petite fenêtre qui va s’afficher pour modifier la valeur de x, y ou z si souhaité.</p></li>
 </ul>
-</section>
-</section>
-<section id="application-reelle">
-<h2>Application réelle<a class="headerlink" href="#application-reelle" title="Lien vers cette rubrique"></a></h2>
-<p>Créer une scène « DronePainting » qui contient deux drones (ou plus, qui sait), et faire en sorte qu’ils volent vers un mur et dessinent des points selon mes indications (ils peuvent former un rectangle par exemple), la programmation est sous Python et la visualisation est sur CoppeliaSim.
-Lancer la simulation en mode stepped pour avoir une simulation déterministe et reproductible</p>
-<p>Pour la simulation j’ai dans un premier temps crée une scène ou un drone se déplace vers un mur et marque deux points dans deux positions différentes : je vais expliquer comment j’ai rajouté le nozzle paint également.
-Par la suite j’ai créé une autre scène ou deux drones se déplacent de la même manière tout en étant reproductible donc pour se faire, il a fallu créer une loop pour que les taches asynchrones en arrière-plan ce qui permet une exécution non bloquante.</p>
 </section>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to LDR_SIMULATION’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+    </div>
 
   <hr/>
 

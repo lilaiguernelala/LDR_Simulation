@@ -16,6 +16,14 @@ La simulation c’est la création d’un modèle virtuel d’une machine, tout 
 
 Comparaison entre CoppeliaSim et GazeboSim qui sont tous deux des simulateurs de robotique mais avec des caractéristiques distinctes, L’objectif de cette comparaison est de déterminer le simulateur le plus adapté à nos besoins.
 
+L'image suivante est l'interface graphique de CoppeliaSim 
+
+![Interface graphique de Coppeliasim](/assets/images/interface_coppeliasim.png "Interface graphique de Coppeliasim")
+
+L'image suivante est l'interface graphique de GazeboSim
+
+![Interface graphique de GazeboSim](/assets/images/interface_gazebo.png "Interface graphique de GazeboSim")
+
 ## La restitution des avantages/inconvénients
 
 ### Le simulateur CoppeliaSim
@@ -38,6 +46,10 @@ Comparaison entre CoppeliaSim et GazeboSim qui sont tous deux des simulateurs de
 | Un facteur de temps réel est beaucoup<br>plus rapide que le temps réel  	| L'interface graphique de GazeboSim<br>est complexe pour les débutants <br>(notamment pour la version classique). 	|
 |  	| Une carte graphique Nvidia avec support<br>CUDA est requise pour l’exécution de<br>certaines simulations. 	|
 
+ #### Tableau récapitulatif de la comparaison 
+
+![Comparaison en tableau](/assets/images/comparaison.png "tableau récapitulatif")
+
 
 ## Les besoins pour la simulation
 
@@ -45,22 +57,37 @@ Les besoins coté recherche et coté enseignement (rajouter le tableau et commen
 -	Un simulateur qui a l’interface graphique de coppeliasim mais qu’on pourra utiliser comme Gazebo, c’est-à-dire on pourra créer notre scène sur un fichier et avoir un seul dossier qui contient notre projet, on pourra lancer le projet dans un terminal sans ouvrir le simulateur avant.
 -	Un simulateur facile à installer sur windows de preférence (car sur linux certaines exécutions bug) 
 -	Un simulateur avec un facteur temps réel qui soit proche du temps réel 
-Image du tableau
+
+![besoins pour la simulation](/assets/images/besoin_simulation.png "Les besoins pour la simulation")
+
 Après avoir tester les deux simulateurs j’ai choisi comme outil de simulation CoppeliaSim pour sa facilité et son efficacité. 
 
-### Tableau récapitulatif 
+
+## Drone Painting
+
+
+![Drone Painting](/assets/images/gif1.gif "DRONE PAINTING")
+
+
+Il faut savoir que dans CoppeliaSim, on peut prendre des objets directement sur l'interface graphique; pour mon cas, j'ai pris un drone ensuite je lui ai rajouté un proximité sensor, qui le cone large rose, j'ai également rajouté un painting nozzle qui est le cone un peu plus fin rose, donc une fois la scène est crée on va créer une connexion entre CoppeliaSim et Python grace à remoteApi qu'on rajoute dans les header, on peut donc dire que : 
+à partir d'un code python simple on peut: modifier des scènes, faire déplacer des objets et récuperer des valeurs des capteurs.
+
+
+![Simulation](/assets/images/sim.png "Exécution d'une scène")
+
+
+Donc comme application réelle j'ai choisi de faire du Drone Painting, c'est une scène qui contient deux drones et faire en sorte qu'ils volent vers un mur et dessinent des points selon mes indications (ils peuvent former un rectangle par exemple)
+
+Lancer la simulation en mode stepped pour avoir une simulation déterministe et reproductible (la simulation en mode stepped est plus lente mais c'est reproductible)
+
 
 **TIPS COPPELIASIM**
 
 -	Toujours enregistrer la scène avant de lancer la simulation sinon tous les objets que vous avez rajoutés ou toutes modifications apportées seront disparus
+
 -	Toujours arrêter la simulation en cours avant de lancer une nouvelle simulation 
+
 -	Si vous avez ouvert plusieurs scènes à la fois, arrêtez la simulation de toutes les scènes avant de lancer une nouvelle simulation
--	Si vous voulez déplacer un objet avec la main ou en tapant les coordonnées que vous souhaitez, cliquez sur ça 
 
-## Application réelle
+-	Si vous voulez déplacer un objet avec la souris cliquez sur ça ![position](/assets/images/position.png "position") , il y aura même une petite fenêtre qui va s'afficher pour modifier la valeur de x, y ou z si souhaité.
 
-Créer une scène "DronePainting" qui contient deux drones (ou plus, qui sait), et faire en sorte qu'ils volent vers un mur et dessinent des points selon mes indications (ils peuvent former un rectangle par exemple), la programmation est sous Python et la visualisation est sur CoppeliaSim.
-Lancer la simulation en mode stepped pour avoir une simulation déterministe et reproductible
-
-Pour la simulation j’ai dans un premier temps crée une scène ou un drone se déplace vers un mur et marque deux points dans deux positions différentes : je vais expliquer comment j’ai rajouté le nozzle paint également. 
-Par la suite j’ai créé une autre scène ou deux drones se déplacent de la même manière tout en étant reproductible donc pour se faire, il a fallu créer une loop pour que les taches asynchrones en arrière-plan ce qui permet une exécution non bloquante. 
