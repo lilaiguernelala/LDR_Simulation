@@ -96,16 +96,17 @@ Mettre en place un environnement de dev/tests avec sondes logicielles pour le te
 Mettre en place un environnement de dev/tests avec, par exemple CoppeliaSim et Python/ROS, génération de scénario et récupération des données de vol et de l’environnement simulé.<br />
 Différents travaux sont réalisés depuis plusieurs années avec l’ONERA sur des simulations utilisant de drones. Ces travaux utilisent d’anciens simulateurs difficiles à maintenir aujourd’hui, ce qui rend complexe la reproduction de certains résultats. Plusieurs exemples existent pour des applications spécifiques, comme avec le robot Poppy et ROS.</p></li>
 </ul>
-<p>La documentation de la partie « Simulation » est disponible dans le dossier LDR_Simulation</p>
+<p>On va s’intéresser que sur la partie simulation pour la suite de cette documentation, concernant la documentation de la partie embarqué, elle est disponible sur un autre dossier nommé LDR_ZephyrOS</p>
 </section>
 <section id="simulation">
 <h1>Simulation<a class="headerlink" href="#simulation" title="Lien vers cette rubrique"></a></h1>
 <p>La simulation c’est la création d’un modèle virtuel d’une machine, tout en prenant en considération l’environnement de travail et tous les autres facteurs influents. Ça nous permet de savoir si la conception peut fonctionner après la fabrication. Ça nous permet de tester différentes machines/algorithmes dans un même environnement (plusieurs drones dans un parc urbain et voir comment chaque drone navigue entre les arbres et réagit aux obstacles), et de tester une machine dans différents environnements (simuler un seul modèle de drone au-dessus d’une forêt avec des vents variables, dans un désert avec des températures élevées ou à l’intérieur de la maison).</p>
-<p>Comparaison entre CoppeliaSim et GazeboSim qui sont tous deux des simulateurs de robotique mais avec des caractéristiques distinctes, L’objectif de cette comparaison est de déterminer le simulateur le plus adapté à nos besoins.</p>
+<p>Pour la suite du projet, on va se concentrer sur deux simulateurs qui sont CoppeliaSim et GazeboSim, ils sont tous les deux des simulateurs dynamiques de la robotique mais avec des caractéristiques distinctes.</p>
 <p>L’image suivante est l’interface graphique de CoppeliaSim</p>
 <p><img alt="Interface graphique de Coppeliasim" src="_images/interface_coppeliasim.png" /></p>
 <p>L’image suivante est l’interface graphique de GazeboSim</p>
 <p><img alt="Interface graphique de GazeboSim" src="_images/interface_gazebo.png" /></p>
+<p>Après avoir tester les deux simulateurs, j’ai pu restituer les avantages et inconvenients de chacun, l’objectif de cette comparaison est de déterminer le simulateur le plus adapté à nos besoins (coté recherche et coté enseignements)</p>
 <section id="la-restitution-des-avantages-inconvenients">
 <h2>La restitution des avantages/inconvénients<a class="headerlink" href="#la-restitution-des-avantages-inconvenients" title="Lien vers cette rubrique"></a></h2>
 <section id="le-simulateur-coppeliasim">
@@ -166,14 +167,16 @@ Différents travaux sont réalisés depuis plusieurs années avec l’ONERA sur 
 </section>
 <section id="les-besoins-pour-la-simulation">
 <h2>Les besoins pour la simulation<a class="headerlink" href="#les-besoins-pour-la-simulation" title="Lien vers cette rubrique"></a></h2>
-<p>Les besoins coté recherche et coté enseignement (rajouter le tableau et commentez le en bas)</p>
+<p>Un simulateur :</p>
 <ul class="simple">
-<li><p>Un simulateur qui a l’interface graphique de coppeliasim mais qu’on pourra utiliser comme Gazebo, c’est-à-dire on pourra créer notre scène sur un fichier et avoir un seul dossier qui contient notre projet, on pourra lancer le projet dans un terminal sans ouvrir le simulateur avant.</p></li>
-<li><p>Un simulateur facile à installer sur windows de preférence (car sur linux certaines exécutions bug)</p></li>
-<li><p>Un simulateur avec un facteur temps réel qui soit proche du temps réel</p></li>
+<li><p>Qui a l’interface graphique de Coppeliasim pour qu’il soit facilement utilisé par les étudiants.</p></li>
+<li><p>Qui exécute les scènes facilement, où on a pas besoin de jouer sur plusieurs plans pour lancer la simulation</p></li>
+<li><p>Facile à installer sur windows de preférence (car sur linux certaines exécutions bug)</p></li>
+<li><p>Deterministe et reproductible</p></li>
+<li><p>Avec un facteur temps réel qui soit proche du temps réel</p></li>
 </ul>
 <p><img alt="besoins pour la simulation" src="_images/besoin_simulation.png" /></p>
-<p>Après avoir tester les deux simulateurs j’ai choisi comme outil de simulation CoppeliaSim pour sa facilité et son efficacité.</p>
+<p>Après avoir tester les deux simulateurs et formalisé les besoins sur la simulation, j’ai choisi comme outil de simulation CoppeliaSim pour sa facilité et son efficacité ainsi que son optimalité</p>
 </section>
 <section id="drone-painting">
 <h2>Drone Painting<a class="headerlink" href="#drone-painting" title="Lien vers cette rubrique"></a></h2>

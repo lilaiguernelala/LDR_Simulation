@@ -8,13 +8,13 @@ Mettre en place un environnement de dev/tests avec sondes logicielles pour le te
 Mettre en place un environnement de dev/tests avec, par exemple CoppeliaSim et Python/ROS, génération de scénario et récupération des données de vol et de l’environnement simulé.  
 Différents travaux sont réalisés depuis plusieurs années avec l’ONERA sur des simulations utilisant de drones. Ces travaux utilisent d’anciens simulateurs difficiles à maintenir aujourd’hui, ce qui rend complexe la reproduction de certains résultats. Plusieurs exemples existent pour des applications spécifiques, comme avec le robot Poppy et ROS.
 
-La documentation de la partie "Simulation" est disponible dans le dossier LDR_Simulation
+On va s'intéresser que sur la partie simulation pour la suite de cette documentation, concernant la documentation de la partie embarqué, elle est disponible sur un autre dossier nommé LDR_ZephyrOS
 
 # Simulation
 
 La simulation c’est la création d’un modèle virtuel d’une machine, tout en prenant en considération l’environnement de travail et tous les autres facteurs influents. Ça nous permet de savoir si la conception peut fonctionner après la fabrication. Ça nous permet de tester différentes machines/algorithmes dans un même environnement (plusieurs drones dans un parc urbain et voir comment chaque drone navigue entre les arbres et réagit aux obstacles), et de tester une machine dans différents environnements (simuler un seul modèle de drone au-dessus d'une forêt avec des vents variables, dans un désert avec des températures élevées ou à l’intérieur de la maison).
 
-Comparaison entre CoppeliaSim et GazeboSim qui sont tous deux des simulateurs de robotique mais avec des caractéristiques distinctes, L’objectif de cette comparaison est de déterminer le simulateur le plus adapté à nos besoins.
+Pour la suite du projet, on va se concentrer sur deux simulateurs qui sont CoppeliaSim et GazeboSim, ils sont tous les deux des simulateurs dynamiques de la robotique mais avec des caractéristiques distinctes.
 
 L'image suivante est l'interface graphique de CoppeliaSim 
 
@@ -23,6 +23,9 @@ L'image suivante est l'interface graphique de CoppeliaSim
 L'image suivante est l'interface graphique de GazeboSim
 
 ![Interface graphique de GazeboSim](/assets/images/interface_gazebo.png "Interface graphique de GazeboSim")
+
+
+Après avoir tester les deux simulateurs, j'ai pu restituer les avantages et inconvenients de chacun, l’objectif de cette comparaison est de déterminer le simulateur le plus adapté à nos besoins (coté recherche et coté enseignements)
 
 ## La restitution des avantages/inconvénients
 
@@ -53,14 +56,17 @@ L'image suivante est l'interface graphique de GazeboSim
 
 ## Les besoins pour la simulation
 
-Les besoins coté recherche et coté enseignement (rajouter le tableau et commentez le en bas)
--	Un simulateur qui a l’interface graphique de coppeliasim mais qu’on pourra utiliser comme Gazebo, c’est-à-dire on pourra créer notre scène sur un fichier et avoir un seul dossier qui contient notre projet, on pourra lancer le projet dans un terminal sans ouvrir le simulateur avant.
--	Un simulateur facile à installer sur windows de preférence (car sur linux certaines exécutions bug) 
--	Un simulateur avec un facteur temps réel qui soit proche du temps réel 
+Un simulateur :
+
+-  Qui a l’interface graphique de Coppeliasim pour qu'il soit facilement utilisé par les étudiants.
+-  Qui exécute les scènes facilement, où on a pas besoin de jouer sur plusieurs plans pour lancer la simulation
+-  Facile à installer sur windows de preférence (car sur linux certaines exécutions bug) 
+-  Deterministe et reproductible
+-  Avec un facteur temps réel qui soit proche du temps réel 
 
 ![besoins pour la simulation](/assets/images/besoin_simulation.png "Les besoins pour la simulation")
 
-Après avoir tester les deux simulateurs j’ai choisi comme outil de simulation CoppeliaSim pour sa facilité et son efficacité. 
+Après avoir tester les deux simulateurs et formalisé les besoins sur la simulation, j’ai choisi comme outil de simulation CoppeliaSim pour sa facilité et son efficacité ainsi que son optimalité
 
 
 ## Drone Painting
