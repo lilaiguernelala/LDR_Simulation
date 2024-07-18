@@ -2,4 +2,6 @@
 
 https://lilaiguernelala.github.io/LDR_Simulation/
 
-https://github.com/lilaiguernelala/LDR_Simulation/blob/main/docs/source/assets/images/gif1.gif
+
+
+![alt text](https://github.com/lilaiguernelala/LDR_Simulation/blob/main/docs/source/assets/images/gif1.gif "Logo Title Text 1")
