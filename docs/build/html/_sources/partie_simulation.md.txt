@@ -81,7 +81,7 @@ Donc comme application réelle j'ai choisi de faire du Drone Painting, c'est une
 Lancer la simulation en mode stepped pour avoir une simulation déterministe et reproductible (la simulation en mode stepped est plus lente mais c'est reproductible)
 
 
-**TIPS COPPELIASIM**
+***TIPS COPPELIASIM***
 
 -	Toujours enregistrer la scène avant de lancer la simulation sinon tous les objets que vous avez rajoutés ou toutes modifications apportées seront disparus
 
