@@ -1,5 +1,5 @@
 # LDR_Simulation
-Aidez-vous avec [la documentation](https://lilaiguernelala.github.io/LDR_Simulation/) !
+Aidez-vous avec [la documentation](https://lilaiguernelala.github.io/LDR_Simulation/) {#id .class1 .class2} !
 
 [Default](#){.btn .btn-default}
 [Primary](#){.btn .btn-primary}
