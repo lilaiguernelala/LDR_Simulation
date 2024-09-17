@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; Documentation LDR_SIMULATION </title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d1a510d7"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=041d0952"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="Welcome to LDR_SIMULATION’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            LDR_SIMULATION
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#simulation">Simulation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#la-restitution-des-avantages-inconvenients">La restitution des avantages/inconvénients</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#le-simulateur-coppeliasim">Le simulateur CoppeliaSim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#le-simulateur-gazebosim">Le simulateur GazeboSim</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tableau-recapitulatif-de-la-comparaison">Tableau récapitulatif de la comparaison</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#les-besoins-pour-la-simulation">Les besoins pour la simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#drone-painting">Drone Painting</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LDR_SIMULATION</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/partie_simulation.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h1>
+<p>Dans le cadre des travaux de recherche menés au LDR sur les plateformes embarquées, les chercheurs souhaitent mettre en place des environnements de développements et de tests plus récents et robustes pour 2 applications en particulier, dans l’ordre d’importance :</p>
+<ul class="simple">
+<li><p>La programmation embarquée, en particulier avec OS Temps Réel.
+Mettre en place un environnement de dev/tests avec sondes logicielles pour le temps réel. Pour réaliser des tests de systèmes contraints, possiblement utilisant des architectures matérielles diverses (ARM, RISC-V, etc.), les chercheurs ont besoin d’un environnement clair, générant des traces analysables (quantité de mémoire utilisée, temps passé sur le processeur et lors des accès aux périphériques, décisions d’ordonnancement, etc.).</p></li>
+<li><p>Simulateur pour robotique/drone.
+Mettre en place un environnement de dev/tests avec, par exemple CoppeliaSim et Python/ROS, génération de scénario et récupération des données de vol et de l’environnement simulé.<br />
+Différents travaux sont réalisés depuis plusieurs années avec l’ONERA sur des simulations utilisant de drones. Ces travaux utilisent d’anciens simulateurs difficiles à maintenir aujourd’hui, ce qui rend complexe la reproduction de certains résultats. Plusieurs exemples existent pour des applications spécifiques, comme avec le robot Poppy et ROS.</p></li>
+</ul>
+<p>On va s’intéresser que sur la partie simulation pour la suite de cette documentation, concernant la documentation de la partie embarqué, elle est disponible sur un autre dossier nommé LDR_ZephyrOS</p>
+</section>
+<section id="simulation">
+<h1>Simulation<a class="headerlink" href="#simulation" title="Lien vers cette rubrique"></a></h1>
+<p>La simulation c’est la création d’un modèle virtuel d’une machine, tout en prenant en considération l’environnement de travail et tous les autres facteurs influents. Ça nous permet de savoir si la conception peut fonctionner après la fabrication. Ça nous permet de tester différentes machines/algorithmes dans un même environnement (plusieurs drones dans un parc urbain et voir comment chaque drone navigue entre les arbres et réagit aux obstacles), et de tester une machine dans différents environnements (simuler un seul modèle de drone au-dessus d’une forêt avec des vents variables, dans un désert avec des températures élevées ou à l’intérieur de la maison).</p>
+<p>Pour la suite du projet, on va se concentrer sur deux simulateurs qui sont CoppeliaSim et GazeboSim, ils sont tous les deux des simulateurs dynamiques de la robotique mais avec des caractéristiques distinctes.</p>
+<p>L’image suivante est l’interface graphique de CoppeliaSim</p>
+<p><img alt="Interface graphique de Coppeliasim" src="_images/interface_coppeliasim.png" /></p>
+<p>L’image suivante est l’interface graphique de GazeboSim</p>
+<p><img alt="Interface graphique de GazeboSim" src="_images/interface_gazebo.png" /></p>
+<p>Après avoir tester les deux simulateurs, j’ai pu restituer les avantages et inconvenients de chacun, l’objectif de cette comparaison est de déterminer le simulateur le plus adapté à nos besoins (coté recherche et coté enseignements)</p>
+<section id="la-restitution-des-avantages-inconvenients">
+<h2>La restitution des avantages/inconvénients<a class="headerlink" href="#la-restitution-des-avantages-inconvenients" title="Lien vers cette rubrique"></a></h2>
+<section id="le-simulateur-coppeliasim">
+<h3>Le simulateur CoppeliaSim<a class="headerlink" href="#le-simulateur-coppeliasim" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Avantages</strong></p></th>
+<th class="head"><p><strong>Inconvénients</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>L’installation est simple et rapide<br>sur Windows, une version portable est<br>également disponible.</p></td>
+<td><p>L’exécution n’est pas possible via le<br>terminal directement sans avoir lancer<br>CoppeliaSim avant.</p></td>
+</tr>
+<tr class="row-odd"><td><p>La création des scènes est simple,<br>la personnalisation est également<br>possible grâce aux script intégrés</p></td>
+<td><p>un facteur de temps réel n’est pas très<br>lent que le temps réel (pour l’exemple<br>de BubbleRob il est de 0.99 donc 9900 fois<br>plus lent que le temps réel).</p></td>
+</tr>
+<tr class="row-even"><td><p>Interface graphique conviviale et<br>facile à utiliser, la création des<br>scènes est donc simple, la personnalisation<br>est possible grâce aux script intégrés</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CoppeliaSim n’est pas déterministe<br>mais on peut le configurer pour l’être<br>en modifiantcertains paramètres mais ces <br>modifications influencent négativement sur<br>le comportement dans les simulations<br>(disparition des objets par exemple)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="le-simulateur-gazebosim">
+<h3>Le simulateur GazeboSim<a class="headerlink" href="#le-simulateur-gazebosim" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Avantages</strong></p></th>
+<th class="head"><p><strong>Inconvénients</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>L’installation et la prise en main de <br>la plateforme sur Linux est plus facile <br>à installer et à configurer</p></td>
+<td><p>L’installation sur Windows est complexe<br>car des installations supplémentaires<br>sont nécessaires (via conda-forge,<br>vcpkg ou WSL)</p></td>
+</tr>
+<tr class="row-odd"><td><p>La création d’une scène est en XML <br>et son exécution est dans un terminal <br>directement sans passer par l’interface<br>graphique</p></td>
+<td><p>Windows n’est pas une plateforme officiellement<br>supportée par Open Robotics pour Gazebo</p></td>
+</tr>
+<tr class="row-even"><td><p>GazeboSim offre une personnalisation<br>avancée car il supporte plusieurs langages<br> de programmation (Python, C++)</p></td>
+<td><p>L’installation nécessite une version <br>spécifique sur Linux (ubuntu 22.04) donc<br>manque de flexibilité</p></td>
+</tr>
+<tr class="row-odd"><td><p>Un facteur de temps réel est beaucoup<br>plus rapide que le temps réel</p></td>
+<td><p>L’interface graphique de GazeboSim<br>est complexe pour les débutants <br>(notamment pour la version classique).</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Une carte graphique Nvidia avec support<br>CUDA est requise pour l’exécution de<br>certaines simulations.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="tableau-recapitulatif-de-la-comparaison">
+<h4>Tableau récapitulatif de la comparaison<a class="headerlink" href="#tableau-recapitulatif-de-la-comparaison" title="Lien vers cette rubrique"></a></h4>
+<p><img alt="Comparaison en tableau" src="_images/comparaison.png" /></p>
+</section>
+</section>
+</section>
+<section id="les-besoins-pour-la-simulation">
+<h2>Les besoins pour la simulation<a class="headerlink" href="#les-besoins-pour-la-simulation" title="Lien vers cette rubrique"></a></h2>
+<p>Un simulateur :</p>
+<ul class="simple">
+<li><p>Qui a l’interface graphique de Coppeliasim pour qu’il soit facilement utilisé par les étudiants.</p></li>
+<li><p>Qui exécute les scènes facilement, où on a pas besoin de jouer sur plusieurs plans pour lancer la simulation</p></li>
+<li><p>Facile à installer sur windows de preférence (car sur linux certaines exécutions bug)</p></li>
+<li><p>Deterministe et reproductible</p></li>
+<li><p>Avec un facteur temps réel qui soit proche du temps réel</p></li>
+</ul>
+<p><img alt="besoins pour la simulation" src="_images/besoin_simulation.png" /></p>
+<p>Après avoir tester les deux simulateurs et formalisé les besoins sur la simulation, j’ai choisi comme outil de simulation CoppeliaSim pour sa facilité et son efficacité ainsi que son optimalité</p>
+</section>
+<section id="drone-painting">
+<h2>Drone Painting<a class="headerlink" href="#drone-painting" title="Lien vers cette rubrique"></a></h2>
+<p><img alt="Drone Painting" src="_images/gif1.gif" /></p>
+<p>Il faut savoir que dans CoppeliaSim, on peut prendre des objets directement sur l’interface graphique; pour mon cas, j’ai pris un drone ensuite je lui ai rajouté un proximité sensor, qui le cone large rose, j’ai également rajouté un painting nozzle qui est le cone un peu plus fin rose, donc une fois la scène est crée on va créer une connexion entre CoppeliaSim et Python grace à ce header qu’on rajoute à notre code Python «from coppeliasim_zmqremoteapi_client import RemoteAPIClient et rajouter à l’interieur du dossier un fichier requirements.txt contenant :</p>
+<p><code class="docutils literal notranslate"><span class="pre">coppeliasim-zmqremoteapi-client</span> <span class="pre">&gt;</span> <span class="pre">2</span> <span class="pre">#</span> <span class="pre">Since</span> <span class="pre">CoppeliaSim</span> <span class="pre">4.6.0</span></code></p>
+<p>Donc on va avoir un seul dossier qui va avoir notre fichier <strong>drone.ttt</strong> qui représente la scène crée sur CoppeliaSim qu’on a enregistré sous le nom de « drone » , un fichier <strong>movingdrone.py</strong> et un fichier <strong>requirements.txt</strong>
+Pour exécuter le code on le fait avec cette ligne la : <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">.\movingdrone.py</span></code></p>
+<p>On peut donc dire qu’à partir d’un code python simple on peut:</p>
+<blockquote>
+<div><p>Modifier des scènes</p>
+</div></blockquote>
+<blockquote>
+<div><p>Faire déplacer des objets</p>
+</div></blockquote>
+<blockquote>
+<div><p>Récuperer des valeurs des capteurs</p>
+</div></blockquote>
+<p><img alt="Simulation" src="_images/sim.png" /></p>
+<p>Donc comme application réelle j’ai choisi de faire du Drone Painting, c’est une scène qui contient deux drones et faire en sorte qu’ils volent vers un mur et dessinent des points selon mes indications (ils peuvent former un rectangle par exemple)</p>
+<p>Lancer la simulation en mode stepped pour avoir une simulation déterministe et reproductible (la simulation en mode stepped est plus lente mais c’est reproductible)</p>
+<p><em><strong>TIPS COPPELIASIM</strong></em></p>
+<ul class="simple">
+<li><p>Toujours enregistrer la scène avant de lancer la simulation sinon tous les objets que vous avez rajoutés ou toutes modifications apportées seront disparus</p></li>
+<li><p>Toujours arrêter la simulation en cours avant de lancer une nouvelle simulation</p></li>
+<li><p>Si vous avez ouvert plusieurs scènes à la fois, arrêtez la simulation de toutes les scènes avant de lancer une nouvelle simulation</p></li>
+<li><p>Si vous voulez déplacer un objet avec la souris cliquez sur ça <img alt="position" src="_images/position.png" /> , il y aura même une petite fenêtre qui va s’afficher pour modifier la valeur de x, y ou z si souhaité.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to LDR_SIMULATION’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, Lila IGUERNELALA.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
