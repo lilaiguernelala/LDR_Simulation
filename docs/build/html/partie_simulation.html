@@ -181,8 +181,20 @@ Différents travaux sont réalisés depuis plusieurs années avec l’ONERA sur 
 <section id="drone-painting">
 <h2>Drone Painting<a class="headerlink" href="#drone-painting" title="Lien vers cette rubrique"></a></h2>
 <p><img alt="Drone Painting" src="_images/gif1.gif" /></p>
-<p>Il faut savoir que dans CoppeliaSim, on peut prendre des objets directement sur l’interface graphique; pour mon cas, j’ai pris un drone ensuite je lui ai rajouté un proximité sensor, qui le cone large rose, j’ai également rajouté un painting nozzle qui est le cone un peu plus fin rose, donc une fois la scène est crée on va créer une connexion entre CoppeliaSim et Python grace à remoteApi qu’on rajoute dans les header, on peut donc dire que :
-à partir d’un code python simple on peut: modifier des scènes, faire déplacer des objets et récuperer des valeurs des capteurs.</p>
+<p>Il faut savoir que dans CoppeliaSim, on peut prendre des objets directement sur l’interface graphique; pour mon cas, j’ai pris un drone ensuite je lui ai rajouté un proximité sensor, qui le cone large rose, j’ai également rajouté un painting nozzle qui est le cone un peu plus fin rose, donc une fois la scène est crée on va créer une connexion entre CoppeliaSim et Python grace à ce header qu’on rajoute à notre code Python «from coppeliasim_zmqremoteapi_client import RemoteAPIClient et rajouter à l’interieur du dossier un fichier requirements.txt contenant :</p>
+<p><code class="docutils literal notranslate"><span class="pre">coppeliasim-zmqremoteapi-client</span> <span class="pre">&gt;</span> <span class="pre">2</span> <span class="pre">#</span> <span class="pre">Since</span> <span class="pre">CoppeliaSim</span> <span class="pre">4.6.0</span></code></p>
+<p>Donc on va avoir un seul dossier qui va avoir notre fichier <strong>drone.ttt</strong> qui représente la scène crée sur CoppeliaSim qu’on a enregistré sous le nom de « drone » , un fichier <strong>movingdrone.py</strong> et un fichier <strong>requirements.txt</strong>
+Pour exécuter le code on le fait avec cette ligne la : <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">.\movingdrone.py</span></code></p>
+<p>On peut donc dire qu’à partir d’un code python simple on peut:</p>
+<blockquote>
+<div><p>Modifier des scènes</p>
+</div></blockquote>
+<blockquote>
+<div><p>Faire déplacer des objets</p>
+</div></blockquote>
+<blockquote>
+<div><p>Récuperer des valeurs des capteurs</p>
+</div></blockquote>
 <p><img alt="Simulation" src="_images/sim.png" /></p>
 <p>Donc comme application réelle j’ai choisi de faire du Drone Painting, c’est une scène qui contient deux drones et faire en sorte qu’ils volent vers un mur et dessinent des points selon mes indications (ils peuvent former un rectangle par exemple)</p>
 <p>Lancer la simulation en mode stepped pour avoir une simulation déterministe et reproductible (la simulation en mode stepped est plus lente mais c’est reproductible)</p>

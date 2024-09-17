@@ -75,8 +75,20 @@ Après avoir tester les deux simulateurs et formalisé les besoins sur la simula
 ![Drone Painting](/assets/images/gif1.gif "DRONE PAINTING")
 
 
-Il faut savoir que dans CoppeliaSim, on peut prendre des objets directement sur l'interface graphique; pour mon cas, j'ai pris un drone ensuite je lui ai rajouté un proximité sensor, qui le cone large rose, j'ai également rajouté un painting nozzle qui est le cone un peu plus fin rose, donc une fois la scène est crée on va créer une connexion entre CoppeliaSim et Python grace à remoteApi qu'on rajoute dans les header, on peut donc dire que : 
-à partir d'un code python simple on peut: modifier des scènes, faire déplacer des objets et récuperer des valeurs des capteurs.
+Il faut savoir que dans CoppeliaSim, on peut prendre des objets directement sur l'interface graphique; pour mon cas, j'ai pris un drone ensuite je lui ai rajouté un proximité sensor, qui le cone large rose, j'ai également rajouté un painting nozzle qui est le cone un peu plus fin rose, donc une fois la scène est crée on va créer une connexion entre CoppeliaSim et Python grace à ce header qu'on rajoute à notre code Python «from coppeliasim_zmqremoteapi_client import RemoteAPIClient et rajouter à l'interieur du dossier un fichier requirements.txt contenant :
+
+```coppeliasim-zmqremoteapi-client > 2 # Since CoppeliaSim 4.6.0```
+ 
+Donc on va avoir un seul dossier qui va avoir notre fichier **drone.ttt** qui représente la scène crée sur CoppeliaSim qu'on a enregistré sous le nom de "drone" , un fichier **movingdrone.py** et un fichier **requirements.txt**
+Pour exécuter le code on le fait avec cette ligne la : ```python .\movingdrone.py```
+
+On peut donc dire qu'à partir d'un code python simple on peut: 
+
+> Modifier des scènes
+
+> Faire déplacer des objets
+
+> Récuperer des valeurs des capteurs
 
 
 ![Simulation](/assets/images/sim.png "Exécution d'une scène")

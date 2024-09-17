@@ -1,0 +1,1 @@
+coppeliasim-zmqremoteapi-client > 2 # Since CoppeliaSim 4.6.0
